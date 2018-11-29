@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class StoreController {
 
 	@GetMapping("/")
-	public String seo() {
+	public String index() {
 		return "index";
 	}
 }

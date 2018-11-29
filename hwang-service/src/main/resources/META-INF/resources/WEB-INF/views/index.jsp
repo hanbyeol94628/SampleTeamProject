@@ -8,7 +8,7 @@
 	<title>게시글 목록</title>
 </head>
 <body>
-<h2>ModelAndView 테스트 페이지입니다.</h2>
+<h2>Model 테스트 페이지입니다. from META</h2>
 <br>
 <h4>list Test : ${ObjectTest}</h4>
 <h4>Object Test : ${listTest}</h4>

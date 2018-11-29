@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Getting Started: Serving Web Content</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'상품 번호: ' + ${result.seq}"></p>
+<p th:text="'상품 이름: ' + ${result.name}"></p>
+<a href="/list">가게 목록 조회</a> |
+</body>
+</html>
