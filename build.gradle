@@ -1,0 +1,70 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.0.RELEASE'
+	}
+	repositories {
+//		jcenter()
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	group = 'cf.inseoul'
+	version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = 1.8
+
+	repositories {
+//		mavenLocal()
+//		jcenter()
+		mavenCentral()
+//		maven { url "https://repo.spring.io/milestone" }
+	}
+
+//	ext {
+//		springCloudVersion = 'Greenwich.M3'
+//	}
+
+
+	dependencies {
+		implementation('org.springframework.boot:spring-boot-starter-actuator')
+		implementation('org.springframework.boot:spring-boot-starter-aop')
+		implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+//		implementation('org.springframework.boot:spring-boot-starter-mail')
+//		implementation('org.springframework.boot:spring-boot-starter-security')
+		implementation('org.springframework.boot:spring-boot-starter-web')
+//		implementation('org.springframework.boot:spring-boot-starter-webflux')
+//		implementation('org.springframework.session:spring-session-core')
+
+//		implementation('pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.1')
+		implementation('org.webjars.bower:adminlte:2.3.11')
+		implementation('org.webjars.bower:font-awesome:4.7.0')
+		implementation('org.webjars.bower:ionicons:2.0.1')
+
+		runtimeOnly('org.springframework.boot:spring-boot-devtools')
+		runtimeOnly('mysql:mysql-connector-java')
+//		runtimeOnly('com.h2database:h2')
+
+		compileOnly('org.projectlombok:lombok')
+
+		testImplementation('org.springframework.boot:spring-boot-starter-test')
+//		testImplementation('org.springframework.security:spring-security-test')
+	}
+
+//	dependencyManagement {
+//		imports {
+//			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+//		}
+//	}
+}
+
+dependencies{
+	implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+}

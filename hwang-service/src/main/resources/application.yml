@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  devtools:
+    livereload:
+      enabled: true
+  output:
+    ansi:
+      enabled: always
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
