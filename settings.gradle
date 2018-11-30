@@ -1,5 +1,5 @@
 rootProject.name = 'store'
 
-include 'hwang-service'
+include 'sample-service'
 include 'kang-service'
 include 'site-service'

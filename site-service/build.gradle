@@ -4,6 +4,4 @@ dependencies{
 	
 //	implementation('org.springframework.session:spring-session-core')
 //	implementation('org.springframework.boot:spring-boot-starter-webflux')
-
-	runtimeOnly('com.h2database:h2')
 }
