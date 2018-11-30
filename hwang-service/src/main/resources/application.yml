@@ -24,6 +24,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5Dialect # MySQL 상세 지정
 
   datasource: # MySQL 설정
-    url: jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useSSL=true&serverTimezone=UTC
+    url: jdbc:log4jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useSSL=true&serverTimezone=UTC
     username: iu
     password: iu1004
+    driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
