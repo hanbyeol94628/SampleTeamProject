@@ -27,7 +27,7 @@ public class Store {
 	private String storeName;
 
 	// @OneToMany 의 fetch 기본전략은 LAZY 이다.
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "team", fetch = FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "store", fetch = FetchType.LAZY)
 	private Collection<Product> products;
 
 	public Store(String storeName) {

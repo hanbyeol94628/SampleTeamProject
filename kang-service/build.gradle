@@ -1,3 +1,12 @@
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+	implementation('com.h2database:h2')
+	
+	implementation('net.sourceforge.nekohtml:nekohtml:1.9.22')
+	implementation('org.springframework.boot:spring-boot-starter-remote-shell')
+	implementation('org.springframework.boot:spring-boot-starter-hateoas')
+	implementation('org.springframework.boot:spring-boot-actuator-docs')
+
+	implementation('org.springframework.boot:spring-boot-starter-security')
+	testImplementation('org.springframework.security:spring-security-test')
 }

@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1><p th:text="${store.storeName}"></p> 에 상품을 등록하세요. </h1>
-<form action="#" th:action="@{/insert}" th:object="${member}" method="post">
+<form action="#" th:action="@{/insert}" th:object="${product}" method="post">
 	<input type="hidden" th:value="${store.seq}" name="seq" />
 	<p>seq: <input type="text" th:field="*{seq}" /></p>
 	<p>name: <input type="text" th:field="*{name}" /></p>
