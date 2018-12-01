@@ -51,7 +51,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					<div class="row gtr-uniform">
 						<!-- Break -->
 						<div class="col-12">
-							<select name="demo-category" id="category">
+							<select name="category" id="category">
 								<option value="">- Category -</option>
 								<option value="1">Top</option>
 								<option value="2">Bottom</option>
