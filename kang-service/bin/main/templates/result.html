@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Getting Started: Handling Form Submission</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'seq: ' + ${result.seq}"></p>
+<p th:text="'storeName: ' + ${result.storeName}"></p>
+<a href="/form">가게 등록하기</a> |
+<a th:href="@{|/addProduct/${result.seq}|}">이 가게의 상품 등록하기</a>
+
+</body>
+</html>

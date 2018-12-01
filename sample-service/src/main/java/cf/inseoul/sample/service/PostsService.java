@@ -1,14 +1,15 @@
 package cf.inseoul.sample.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import cf.inseoul.sample.domain.posts.PostsRepository;
 import cf.inseoul.sample.dto.PostsMainResponseDto;
 import cf.inseoul.sample.dto.PostsSaveRequestDto;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service
@@ -28,6 +29,7 @@ public class PostsService {
 		return postsRepository.save(dto.toEntity()).getId();
 	}
 
+	
 	/*
 	옵션(readOnly = true)을 주면 트랜잭션 범위는 유지하되, 조회 기능만 남겨두어 조회 속도가 개선되기 때문에 특별히 등록/수정/삭제 기능이 없는 메소드에선 사용하시는걸 추천드립니다.
 	 */

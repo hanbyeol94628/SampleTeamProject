@@ -1,0 +1,72 @@
+server:
+  port: 8079
+
+spring:
+  devtools:
+    livereload:
+      port: 35729
+
+  output:
+    ansi:
+      enabled: always
+
+
+# ====================
+# = Hibernate config
+# ====================
+  jpa:
+    database: mysql # MySQL 을 사용할 것.
+    show-sql: true # API 호출시, SQL 문을 콘솔에 출력한다.
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update # DDL 정의시 데이터베이스의 고유 기능을 지정합니다.
+    open-in-view: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect # MySQL 상세 지정
+
+
+# ========================================
+# = JDBC Connection url for the database
+# ========================================
+## MySQL 설정
+  datasource:
+    url: jdbc:log4jdbc:mysql://localhost:3306/market?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useSSL=true&serverTimezone=UTC
+    username: iu
+    password: iu1004
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+
+## H2 설정
+#  datasource:
+#      url: jdbc:log4jdbc:h2:mem:testdb;DB_CLOSE_DELAY=- 1;DB_CLOSE_ON_EXIT=FALSE
+#      username: sa
+#      password:
+##      driverClassName: org.h2.Driver
+#      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+#  h2:
+#    console:
+#      enabled: true
+
+
+# ===============================
+# = Thymeleaf configurations
+# ===============================
+  thymeleaf:
+    cache: false
+
+
+# ======================
+# = log level config
+# ======================
+
+
+# ======================
+# = Actuator config
+# ======================
+management:
+  health:
+    db:
+      enabled: true # Enable database health check.
+    defaults:
+      enabled: true # Enable default health indicators.
+    diskspace:
+      enabled: true # Enable disk space health check.

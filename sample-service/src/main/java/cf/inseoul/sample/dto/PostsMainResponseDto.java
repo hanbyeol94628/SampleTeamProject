@@ -37,6 +37,7 @@ public class PostsMainResponseDto {
 		modifiedDate = toStringDateTime(entity.getModifiedDate());
 	}
 
+	
 	/**
 	 * Java 8 버전
 	 */

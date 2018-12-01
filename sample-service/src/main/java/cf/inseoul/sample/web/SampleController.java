@@ -38,4 +38,9 @@ public class SampleController {
 	public String test() {
 		return "test";
 	}
+	
+	@GetMapping("/hanbyeol")
+	public String hanbyeolTest() {
+		return "hanbyeol_test";
+	}
 }
