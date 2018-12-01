@@ -47,11 +47,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					<h2> <i class="far fa-edit"></i> 상품 등록</h2>
 				</header>
 				<div class="box">
-					<form method="post" action="#">
+					<form method="post" action="/productSave">
 					<div class="row gtr-uniform">
 						<!-- Break -->
 						<div class="col-12">
-							<select name="demo-category" id="demo-category">
+							<select name="demo-category" id="category">
 								<option value="">- Category -</option>
 								<option value="1">Top</option>
 								<option value="2">Bottom</option>
@@ -62,35 +62,36 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 						
 						<!-- Break -->
 						<div class="col-12">
-							<input type="text" name="demo-name" id="demo-name" value="" placeholder="상품명" />
+							<input type="text" name="name" id="name" value="" placeholder="상품명" />
+						</div>
+						
+						<!-- Break -->
+						<div class="col-6">
+							<input type="text" name="image" id="price" value="" placeholder="파일선택(임시로 text type 넣음)" />
+						</div>
+						<div class="col-6">
+							<label for="image">파일선택</label>
 						</div>
 						
 						
-						
-						<div class="col-3 col-12-small">
-							<label for="demo-priority-low">배송비</label>
+						<!-- Break -->
+						<div class="col-4">
+							<input type="text" name="price" id="price" value="" placeholder="가격" />
 						</div>
-						<div class="col-3 col-12-small">
-							<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-							<label for="demo-priority-low">무료</label>
+						<div class="col-4">
+							<label for="price">원</label>
 						</div>
-						<div class="col-3 col-12-small">
-							<input type="radio" id="demo-priority-normal" name="demo-priority">
-							<label for="demo-priority-normal">2,500원 (일반)</label>
-						</div>
-						<div class="col-3 col-12-small">
-							<input type="radio" id="demo-priority-high" name="demo-priority">
-							<label for="demo-priority-high">5,000원 (제주, 도서 산간)</label>
+						<div class="col-4">
 						</div>
 						
 						<!-- Break -->
 						<div class="col-12">
-							<textarea name="editor1" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+							<textarea name="content" id="content" placeholder="Enter your message" rows="6"></textarea>
 						</div>
 						<!-- Break -->
 						<div class="col-12">
 							<ul class="actions">
-								<li><input type="submit" value="Send Message" class="primary" /></li>
+								<li><input type="submit" value="Submit" class="primary product-save-btn" /></li>
 								<li><input type="reset" value="Reset" /></li>
 							</ul>
 						</div>
@@ -179,38 +180,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 </div>
 
-<div class="modal fade" id="savePostsModal" tabindex="-1" role="dialog" aria-labelledby="savePostsLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="savePostsLabel">게시글 등록</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form>
-					<div class="form-group">
-						<label for="title">제목</label>
-						<input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
-					</div>
-					<div class="form-group">
-						<label for="author"> 작성자 </label>
-						<input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">
-					</div>
-					<div class="form-group">
-						<label for="content"> 내용 </label>
-						<textarea class="demo-messsage" id="editor1" placeholder="내용을 입력하세요"></textarea>
-					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-				<button type="button" class="btn btn-primary" id="btn-save">등록</button>
-			</div>
-		</div><%-- modal-content end --%>
-	</div><%-- modal-dialog end --%>
-</div><%-- modal fade end --%>
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
@@ -223,15 +192,15 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
-<!--custom js 추가-->
-<script src="sample/sampleHb.js"></script>
+<!--custom js 추가
+<script src="sample/sampleHb.js"></script>-->
 
 <!-- CK Editor 추가 -->
 <script src="ckeditor/ckeditor.js"></script>
 <script>
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace( 'editor1' );
+    CKEDITOR.replace( 'content' );
 </script>
 </body>
 </html>

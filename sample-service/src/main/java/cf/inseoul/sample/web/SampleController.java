@@ -1,10 +1,14 @@
 package cf.inseoul.sample.web;
 
-import cf.inseoul.sample.service.PostsService;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import cf.inseoul.sample.dto.ProductSaveRequestDto;
+import cf.inseoul.sample.service.PostsService;
+import cf.inseoul.sample.service.ProductService;
+import lombok.AllArgsConstructor;
 
 @Controller
 @AllArgsConstructor
@@ -17,6 +21,7 @@ public class SampleController {
 	*/
 
 	private PostsService postsService;
+	private ProductService productService;
 
 	@GetMapping({"/", "/index"})
 	public String index(Model model) {
@@ -42,5 +47,11 @@ public class SampleController {
 	@GetMapping("/hanbyeol")
 	public String hanbyeolTest() {
 		return "hanbyeol_test";
+	}
+	
+	@PostMapping("/productSave")
+	public String productSave(ProductSaveRequestDto dto) {
+		productService.save(dto);
+		return "hanbyeol_saveOK";
 	}
 }
