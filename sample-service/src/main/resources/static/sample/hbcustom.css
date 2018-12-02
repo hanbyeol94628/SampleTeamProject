@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.nomargin {
+    margin: 0;
+}
+.nopadding {
+    padding: 0;
+}
+.none {
+    display: none;
+}
+.display{
+    display: block;
+}
+
+Section {
+    font-family: 'Noto Sans KR', "Open Sans", sans-serif;
+}

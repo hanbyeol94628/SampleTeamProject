@@ -27,7 +27,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Header -->
 			<header id="header">
 				<a href="index" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
 				<ul class="icons">
 					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -37,26 +36,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				</ul>
 			</header>
 
-			<!-- Banner -->
-			<section id="banner">
-				<div class="content">
-					<header>
-						<h1>Hi, I’m Editorial<br/>
-							by HTML5 UP</h1>
-						<p>A free and fully responsive site template</p>
-					</header>
-					<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum
-						congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris.
-						Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac
-						quam. Lorem ipsum dolor sit nullam.</p>
-					<ul class="actions">
-						<li><a href="#" class="button big">Learn More</a></li>
-					</ul>
-				</div>
-				<span class="image object">
-										<img src="images/pic10.jpg" alt=""/>
-									</span>
-			</section>
 
 			<!-- Section -->
 			<section>
@@ -183,31 +162,21 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				</header>
 				<ul>
 					<li><a href="index">Homepage</a></li>
-					<li><a href="generic">Generic</a></li>
 					<li><a href="elements">Elements</a></li>
 					<li>
-						<span class="opener">Submenu</span>
+						<span class="opener">Product</span>
 						<ul>
-							<li><a href="#">Lorem Dolor</a></li>
-							<li><a href="#">Ipsum Adipiscing</a></li>
-							<li><a href="#">Tempus Magna</a></li>
-							<li><a href="#">Feugiat Veroeros</a></li>
+							<li><a href="/AddProduct">Regist Product</a></li>
+							<li><a href="/ProductList">Product List</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Etiam Dolore</a></li>
-					<li><a href="#">Adipiscing</a></li>
 					<li>
-						<span class="opener">Another Submenu</span>
+						<span class="opener">Sales Manager</span>
 						<ul>
-							<li><a href="#">Lorem Dolor</a></li>
-							<li><a href="#">Ipsum Adipiscing</a></li>
-							<li><a href="#">Tempus Magna</a></li>
-							<li><a href="#">Feugiat Veroeros</a></li>
+							<li><a href="/OrderList">Order</a></li>
+							<li><a href="/Qna">Q & A</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Maximus Erat</a></li>
-					<li><a href="#">Sapien Mauris</a></li>
-					<li><a href="#">Amet Lacinia</a></li>
 				</ul>
 			</nav>
 

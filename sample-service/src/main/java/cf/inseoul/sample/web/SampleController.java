@@ -44,14 +44,15 @@ public class SampleController {
 		return "test";
 	}
 	
-	@GetMapping("/hanbyeol")
+	// 상품 등록 페이지 
+	@GetMapping("/AddProduct")
 	public String hanbyeolTest() {
-		return "hanbyeol_test";
+		return "AddProduct";
 	}
-	
+	// 상품 등록 처리
 	@PostMapping("/productSave")
 	public String productSave(ProductSaveRequestDto dto) {
 		productService.save(dto);
-		return "hanbyeol_saveOK";
+		return "ProductDetail";
 	}
 }

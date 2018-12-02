@@ -43,60 +43,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 			<!-- Section -->
 			<section>
-				<header class="major">
-					<h2> <i class="far fa-edit"></i> 상품 등록</h2>
-				</header>
 				<div class="box">
-					<form method="post" action="/productSave">
-					<div class="row gtr-uniform">
-						<!-- Break -->
-						<div class="col-12">
-							<select name="category" id="category">
-								<option value="">- Category -</option>
-								<option value="1">Top</option>
-								<option value="2">Bottom</option>
-								<option value="3">Outer</option>
-								<option value="4">Shoes</option>
-							</select>
-						</div>
-						
-						<!-- Break -->
-						<div class="col-12">
-							<input type="text" name="name" id="name" value="" placeholder="상품명" />
-						</div>
-						
-						<!-- Break -->
-						<div class="col-6">
-							<input type="text" name="image" id="price" value="" placeholder="파일선택(임시로 text type 넣음)" />
-						</div>
-						<div class="col-6">
-							<label for="image">파일선택</label>
-						</div>
-						
-						
-						<!-- Break -->
-						<div class="col-4">
-							<input type="text" name="price" id="price" value="" placeholder="가격" />
-						</div>
-						<div class="col-4">
-							<label for="price">원</label>
-						</div>
-						<div class="col-4">
-						</div>
-						
-						<!-- Break -->
-						<div class="col-12">
-							<textarea name="content" id="content" placeholder="Enter your message" rows="6"></textarea>
-						</div>
-						<!-- Break -->
-						<div class="col-12">
-							<ul class="actions">
-								<li><input type="submit" value="Submit" class="primary product-save-btn" /></li>
-								<li><input type="reset" value="Reset" /></li>
-							</ul>
-						</div>
-					</div>
-				</form>
+					<h3>글이 등록되었습니다.</h3>
 				</div>
 			</section>
 
@@ -123,31 +71,21 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				</header>
 				<ul>
 					<li><a href="index">Homepage</a></li>
-					<li><a href="generic">Generic</a></li>
 					<li><a href="elements">Elements</a></li>
 					<li>
-						<span class="opener">Submenu</span>
+						<span class="opener">Product</span>
 						<ul>
-							<li><a href="#">Lorem Dolor</a></li>
-							<li><a href="#">Ipsum Adipiscing</a></li>
-							<li><a href="#">Tempus Magna</a></li>
-							<li><a href="#">Feugiat Veroeros</a></li>
+							<li><a href="/AddProduct">Regist Product</a></li>
+							<li><a href="/ProductList">Product List</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Etiam Dolore</a></li>
-					<li><a href="#">Adipiscing</a></li>
 					<li>
-						<span class="opener">Another Submenu</span>
+						<span class="opener">Sales Manager</span>
 						<ul>
-							<li><a href="#">Lorem Dolor</a></li>
-							<li><a href="#">Ipsum Adipiscing</a></li>
-							<li><a href="#">Tempus Magna</a></li>
-							<li><a href="#">Feugiat Veroeros</a></li>
+							<li><a href="/OrderList">Order</a></li>
+							<li><a href="/Qna">Q & A</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Maximus Erat</a></li>
-					<li><a href="#">Sapien Mauris</a></li>
-					<li><a href="#">Amet Lacinia</a></li>
 				</ul>
 			</nav>
 
@@ -200,7 +138,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script>
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace( 'content' );
+    CKEDITOR.replace( 'editor1' );
 </script>
 </body>
 </html>

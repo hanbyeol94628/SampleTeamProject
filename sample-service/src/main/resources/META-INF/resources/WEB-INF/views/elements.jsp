@@ -452,39 +452,29 @@ print 'It took ' + i + ' iterations to sort the deck.';
 								</section>
 
 							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index">Homepage</a></li>
-										<li><a href="generic">Generic</a></li>
-										<li><a href="elements">Elements</a></li>
-										<li>
-											<span class="opener">Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
-									</ul>
-								</nav>
+							<nav id="menu">
+								<header class="major">
+									<h2>Menu</h2>
+								</header>
+								<ul>
+									<li><a href="index">Homepage</a></li>
+									<li><a href="elements">Elements</a></li>
+									<li>
+										<span class="opener">Product</span>
+										<ul>
+											<li><a href="/AddProduct">Regist Product</a></li>
+											<li><a href="/ProductList">Product List</a></li>
+										</ul>
+									</li>
+									<li>
+										<span class="opener">Sales Manager</span>
+										<ul>
+											<li><a href="/OrderList">Order</a></li>
+											<li><a href="/Qna">Q & A</a></li>
+										</ul>
+									</li>
+								</ul>
+							</nav>			
 
 							<!-- Section -->
 								<section>
