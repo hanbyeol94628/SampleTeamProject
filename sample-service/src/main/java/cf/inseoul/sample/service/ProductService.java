@@ -1,6 +1,7 @@
 package cf.inseoul.sample.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,9 @@ public class ProductService {
 	
 	public List<Product> list() {
 		return productRepository.findAll();
+	}
+	
+	public Optional<Product> detail(Long id) {
+		return productRepository.findById(id);
 	}
 }

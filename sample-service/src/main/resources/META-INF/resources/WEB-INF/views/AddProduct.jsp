@@ -99,20 +99,31 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 						<div class="col-12">
 							<input type="text" name="name" id="name" value="" placeholder="상품명" />
 						</div>
+												
 						
-						<!-- Break -->
-						<div class="col-6">
-							<input type="text" name="image" id="price" value="" placeholder="파일선택(임시로 text type 넣음)" />
+						<!-- 파일 업로드 -->
+						<div class="col-4 file preview">
+							<div class="box">
+							</div>
 						</div>
-						<div class="col-6">
-							<input type="button" class="small" value="Upload"></input>
+						
+						<div class="col-8 file">
+							<button class="small primary fileUploadBtn" value="upload">파일 업로드</button>
+							<input type="file" class="small fileUpload" name="image" id="file" />
+							<span class="filename"></span>
 						</div>
+						
+						
 						
 						
 						<!-- Break -->
 						<div class="col-3">
 							<input type="text" name="price" id="price" value="" placeholder="가격" />
 						</div>
+						
+						
+						
+						
 						<div class="col-3">
 							<label for="price">원</label>
 						</div>

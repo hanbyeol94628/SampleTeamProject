@@ -23,13 +23,13 @@ public class Product extends BaseTimeEntity{
 	private String category;
 	private String name;
 	private String image;
-	private long price;
+	private Long price;
 	
 	@Column(columnDefinition = "TEXT")
 	private String content;
 	
 	@Builder
-	public Product(Long id, String category, String name, String image, long price, String content) {
+	public Product(Long id, String category, String name, String image, Long price, String content) {
 		this.id = id;
 		this.category = category;
 		this.name = name;

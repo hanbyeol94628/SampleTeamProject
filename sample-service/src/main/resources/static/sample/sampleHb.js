@@ -32,4 +32,45 @@
 	});
 
 
+	// 파 일  업 로 드
+
+	$('.preview > .box').html("<p>파일을 선택해 주세요</p>");
+
+	$('.fileUploadBtn').click(function(e){
+		e.preventDefault();             
+		$("input:file").click();               
+	});  
+
+	$('input:file').change(function(e){
+		var urlImg = $("input:file").val();
+		$('.filename').html(urlImg);
+	});    
+
+	
+
+
+
+var upload = $('input:file')[0],
+    holder = $('.preview > .box');
+
+upload.onchange = function (e) {
+  e.preventDefault();
+
+  var file = upload.files[0],
+      reader = new FileReader();
+  reader.onload = function (event) {
+    var img = new Image();
+    img.src = event.target.result;
+    if (img.width > 560) { 
+      img.width = 560;
+    }
+    holder.html('');
+	holder.css('background-image', 'url("' + img.src + '")');
+	holder.css('background-size', 'cover');
+  };
+  reader.readAsDataURL(file);
+
+  return false;
+};
+
 

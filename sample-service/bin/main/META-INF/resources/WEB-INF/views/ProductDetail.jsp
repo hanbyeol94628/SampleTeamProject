@@ -44,11 +44,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 			<!-- Section -->
 			<section>
-				<div class="box">
-					<h3>글이 등록되었습니다.</h3>
-				</div>
+			<div class="box">
+					<i class="fas fa-chevron-right"></i> ${product.category }
+					<h3> ${product.name}</h3>
+					
+					<img src="${product.image}" />
+					
+					<i class="fas fa-won-sign"></i> ${product.price}
+					<div class="box">
+						${product.content}
+					</div>
+			</div>
 			</section>
-
 			<!-- Section -->
 
 		</div>

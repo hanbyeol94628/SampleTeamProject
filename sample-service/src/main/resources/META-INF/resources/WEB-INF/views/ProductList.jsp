@@ -45,7 +45,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Section -->
 			<section>
 				<header class="major">
-					<h3> <i class="far fa-list"></i> 상품 목록</h3>
+					<h3> <i class="fas fa-list-ul"></i> 상품 목록</h3>
 				</header>
 				<div class="table-wrapper">
 					<table>
@@ -55,6 +55,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 								<th>카테고리</th>
 								<th>상품명</th>
 								<th>가격</th>
+								<th>파일</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -62,8 +63,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 							<tr>
 								<td>${product.id}</td>
 								<td>${product.category}</td>
-								<td>${product.name}</td>
+								<td><a href="/ProductDetail?id=${product.id}">${product.name}</a></td>
 								<td>${product.price}</td>
+								<td>${product.image}</td>
 							</tr>
 							</c:forEach>
 						</tbody>

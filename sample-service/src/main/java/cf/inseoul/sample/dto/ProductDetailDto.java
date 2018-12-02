@@ -7,27 +7,24 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class ProductListDto {
+public class ProductDetailDto {
 
 
 	private Long id;
 	private String category;
 	private String name;
 	private String image;
-	private String price;
+	private long price;
 	private String content;
 	
 	@Builder
-	public ProductListDto(Product entity) {
+	public ProductDetailDto(Product entity) {
 		id = entity.getId();
 		category = entity.getCategory();
 		name = entity.getName();
 		image = entity.getImage();
-		price = priceFormat(entity.getPrice());
+		price = entity.getPrice();
 		content = entity.getContent();
 	}
-	
-	String priceFormat(long price) {
-		return String.format("%,d", price);
-	}
+
 }

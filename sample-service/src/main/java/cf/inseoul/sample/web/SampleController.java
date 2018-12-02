@@ -1,11 +1,18 @@
 package cf.inseoul.sample.web;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import cf.inseoul.sample.domain.posts.Product;
 import cf.inseoul.sample.dto.ProductSaveRequestDto;
@@ -56,7 +63,7 @@ public class SampleController {
 	@PostMapping("/productSave")
 	public String productSave(ProductSaveRequestDto dto) {
 		productService.save(dto);
-		return "ProductDetail";
+		return "redirect:/ProductList";
 	}
 	
 	
@@ -69,4 +76,17 @@ public class SampleController {
 		
 		return "ProductList";
 	}
+	
+	
+	// 상품 조회
+	@GetMapping("/ProductDetail")
+	public void productDetail(Model model, @RequestParam Long id) {
+		Optional<Product> productO = productService.detail(id);
+		Product product = productO.get();
+		model.addAttribute("product", product);
+	}
+	
+	
+	
+	
 }
