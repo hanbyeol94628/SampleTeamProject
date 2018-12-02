@@ -1,10 +1,13 @@
 package cf.inseoul.sample.web;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import cf.inseoul.sample.domain.posts.Product;
 import cf.inseoul.sample.dto.ProductSaveRequestDto;
 import cf.inseoul.sample.service.PostsService;
 import cf.inseoul.sample.service.ProductService;
@@ -54,5 +57,16 @@ public class SampleController {
 	public String productSave(ProductSaveRequestDto dto) {
 		productService.save(dto);
 		return "ProductDetail";
+	}
+	
+	
+	// 상품 목록 페이지 
+	@GetMapping("/ProductList")
+	public String productList(Model model) {
+		
+		List<Product> products = productService.list();
+		model.addAttribute("products", products);
+		
+		return "ProductList";
 	}
 }

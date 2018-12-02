@@ -7,9 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import cf.inseoul.sample.domain.BaseTimeEntity;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
-
+import lombok.NoArgsConstructor;
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
 public class Product extends BaseTimeEntity{
@@ -27,7 +29,8 @@ public class Product extends BaseTimeEntity{
 	private String content;
 	
 	@Builder
-	public Product(String category, String name, String image, long price, String content) {
+	public Product(Long id, String category, String name, String image, long price, String content) {
+		this.id = id;
 		this.category = category;
 		this.name = name;
 		this.image = image;

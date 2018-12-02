@@ -13,6 +13,7 @@
     display: block;
 }
 
-Section {
-    font-family: 'Noto Sans KR', "Open Sans", sans-serif;
+Section,
+input {
+    font-family: 'Noto Sans KR', "Roboto Slab", sans-serif;
 }

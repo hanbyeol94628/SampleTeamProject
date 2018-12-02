@@ -54,7 +54,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 						<!-- Break -->
 							<div class="col-4">
 								<select name="" id="category" class="main_cate">
-									<option value="">- Category -</option>
+									<option value="카테고리 없음">- Category -</option>
 									<option value="1">Top</option>
 									<option value="2">Bottom</option>
 									<option value="3">Outer</option>
@@ -63,34 +63,34 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 							</div>
 							<div>
 								<select class="sub_cate sub_cate1">
-									<option value="">: : : : : : top : : : : : : </option>
-									<option value="1-1">T-Shirts</option>
-									<option value="1-2">Blouse/Shirts</option>
-									<option value="1-3">Knit/Cardigan</option>
+									<option value="상의">: : : : : : top : : : : : : </option>
+									<option value="티셔츠">T-Shirts</option>
+									<option value="블라우스/셔츠">Blouse/Shirts</option>
+									<option value="니트/가디건">Knit/Cardigan</option>
 								</select>
 							</div>
 							<div>
 								<select class="sub_cate sub_cate2">
-									<option value="">: : : : : : : bottom : : : : : :</option>
-									<option value="2-1">Pants</option>
-									<option value="2-2">Skirt</option>
+									<option value="하의">: : : : : : : bottom : : : : : :</option>
+									<option value="바지">Pants</option>
+									<option value="스커트">Skirt</option>
 								</select>
 							</div>
 							<div>
 								<select class="sub_cate sub_cate3">
-									<option value="">: : : : : : : outer : : : : : :</option>
-									<option value="3-1">Jacket</option>
-									<option value="3-2">Coat</option>
-									<option value="3-3">Jumper</option>
+									<option value="아우터">: : : : : : : outer : : : : : :</option>
+									<option value="재킷">Jacket</option>
+									<option value="코트">Coat</option>
+									<option value="점퍼">Jumper</option>
 								</select>
 							</div>
 							<div>
 								<select class="sub_cate sub_cate4">
-									<option value="">: : : : : : : shoes : : : : : :</option>
-									<option value="4-1">Sneakers</option>
-									<option value="4-2">Boots</option>
-									<option value="4-3">Low Shoes</option>
-									<option value="4-4">Sandal</option>
+									<option value="신발">: : : : : : : shoes : : : : : :</option>
+									<option value="스니커즈/운동화">Sneakers</option>
+									<option value="구두/부츠/워커">Boots</option>
+									<option value="단화">Low Shoes</option>
+									<option value="샌들">Sandal</option>
 									
 								</select>
 							</div>
@@ -105,7 +105,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 							<input type="text" name="image" id="price" value="" placeholder="파일선택(임시로 text type 넣음)" />
 						</div>
 						<div class="col-6">
-							<label for="image">파일선택</label>
+							<input type="button" class="small" value="Upload"></input>
 						</div>
 						
 						
@@ -126,7 +126,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 						<!-- Break -->
 						<div class="col-12">
 							<ul class="actions">
-								<li><input type="submit" value="Submit" class="primary product-save-btn" /></li>
+								<li><input type="submit" value="Submit" class="primary" /></li>
 								<li><input type="reset" value="Reset" /></li>
 							</ul>
 						</div>

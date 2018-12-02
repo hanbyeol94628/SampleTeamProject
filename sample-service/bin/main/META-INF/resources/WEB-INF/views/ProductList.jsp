@@ -44,8 +44,36 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 			<!-- Section -->
 			<section>
-				<div class="box">
-					<h3>글이 등록되었습니다.</h3>
+				<header class="major">
+					<h3> <i class="far fa-list"></i> 상품 목록</h3>
+				</header>
+				<div class="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>카테고리</th>
+								<th>상품명</th>
+								<th>가격</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${products}" var="product">
+							<tr>
+								<td>${product.id}</td>
+								<td>${product.category}</td>
+								<td>${product.name}</td>
+								<td>${product.price}</td>
+							</tr>
+							</c:forEach>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="2"></td>
+								<td><input type="button" class="primary" value="상품 등록"/></td>
+							</tr>
+						</tfoot>
+					</table>
 				</div>
 			</section>
 
