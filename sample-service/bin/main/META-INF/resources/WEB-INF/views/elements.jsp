@@ -12,6 +12,15 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+			
+		<!-- font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<!-- noto Sans KR -->
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+		<!-- custom css 추가 -->
+		<link rel="stylesheet" href="sample/hbcustom.css">
 	</head>
 	<body class="is-preload">
 
@@ -454,11 +463,9 @@ print 'It took ' + i + ' iterations to sort the deck.';
 							<!-- Menu -->
 							<nav id="menu">
 								<header class="major">
-									<h2>Menu</h2>
+									<h2>관리자 페이지</h2>
 								</header>
 								<ul>
-									<li><a href="index">Homepage</a></li>
-									<li><a href="elements">Elements</a></li>
 									<li>
 										<span class="opener">Product</span>
 										<ul>
@@ -473,8 +480,12 @@ print 'It took ' + i + ' iterations to sort the deck.';
 											<li><a href="/Qna">Q & A</a></li>
 										</ul>
 									</li>
+									<li><a href="index">Homepage</a></li>
+									<li><a href="elements">Elements</a></li>
+									
 								</ul>
-							</nav>			
+							</nav>
+			
 
 							<!-- Section -->
 								<section>

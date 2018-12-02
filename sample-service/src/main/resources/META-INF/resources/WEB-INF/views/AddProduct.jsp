@@ -165,11 +165,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Menu -->
 			<nav id="menu">
 				<header class="major">
-					<h2>Menu</h2>
+					<h2>관리자 페이지</h2>
 				</header>
 				<ul>
-					<li><a href="index">Homepage</a></li>
-					<li><a href="elements">Elements</a></li>
 					<li>
 						<span class="opener">Product</span>
 						<ul>
@@ -184,8 +182,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 							<li><a href="/Qna">Q & A</a></li>
 						</ul>
 					</li>
+					<li><a href="index">Homepage</a></li>
+					<li><a href="elements">Elements</a></li>
+					
 				</ul>
 			</nav>
+
 
 
 			<!-- Section -->

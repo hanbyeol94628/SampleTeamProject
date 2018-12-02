@@ -14,6 +14,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	<link rel="stylesheet" href="assets/css/main.css"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!-- font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<!-- noto Sans KR -->
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+	<!-- custom css 추가 -->
+	<link rel="stylesheet" href="sample/hbcustom.css">
 </head>
 <body class="is-preload">
 
@@ -36,49 +43,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 				</ul>
 			</header>
 
-
-			<!-- Section -->
-			<section>
-				<header class="major">
-					<h2>Erat lacinia</h2>
-				</header>
-				<div class="features">
-					<article>
-						<span class="icon fa-diamond"></span>
-						<div class="content">
-							<h3>Portitor ullamcorper</h3>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
-								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-						</div>
-					</article>
-					<article>
-						<span class="icon fa-paper-plane"></span>
-						<div class="content">
-							<h3>Sapien veroeros</h3>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
-								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-						</div>
-					</article>
-					<article>
-						<span class="icon fa-rocket"></span>
-						<div class="content">
-							<h3>Quam lorem ipsum</h3>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
-								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-						</div>
-					</article>
-					<article>
-						<span class="icon fa-signal"></span>
-						<div class="content">
-							<h3>Sed magna finibus</h3>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
-								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-						</div>
-					</article>
-				</div>
-			</section>
-
-
 		</div>
 	</div>
 
@@ -96,11 +60,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Menu -->
 			<nav id="menu">
 				<header class="major">
-					<h2>Menu</h2>
+					<h2>관리자 페이지</h2>
 				</header>
 				<ul>
-					<li><a href="index">Homepage</a></li>
-					<li><a href="elements">Elements</a></li>
 					<li>
 						<span class="opener">Product</span>
 						<ul>
@@ -115,6 +77,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 							<li><a href="/Qna">Q & A</a></li>
 						</ul>
 					</li>
+					<li><a href="index">Homepage</a></li>
+					<li><a href="elements">Elements</a></li>
+					
 				</ul>
 			</nav>
 
