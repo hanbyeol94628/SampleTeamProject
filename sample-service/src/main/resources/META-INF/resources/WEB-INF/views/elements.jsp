@@ -44,7 +44,7 @@
 								</header>
 
 							<!-- Content -->
-								<section>
+								<section class="elements">
 									<header class="main">
 										<h1>Elements</h1>
 									</header>

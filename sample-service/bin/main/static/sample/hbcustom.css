@@ -16,7 +16,11 @@
 #menu,
 Section,
 input {
-    font-family: "Roboto Slab",'Noto Sans KR', 'Open Sans' sans-serif;
+    font-family: "Roboto Slab",'Noto Sans KR', 'Open Sans', sans-serif;
+}
+
+.elements {
+    font-family: 'Noto Sans KR', 'Open Sans', sans-serif;
 }
 Section .preview > .box {
     height: 200px;
