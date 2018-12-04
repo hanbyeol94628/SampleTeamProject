@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE HTML>
 <!--
 Editorial by HTML5 UP
@@ -31,7 +32,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 			<!-- Header -->
 			<header id="header">
-				<a href="index" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+				<a href="index" class="logo"><strong>Online Shop</strong> by Team try/catch</a>
 				<ul class="icons">
 					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -55,24 +56,22 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 								<th>카테고리</th>
 								<th>상품명</th>
 								<th>가격</th>
-								<th>파일</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${products}" var="product">
 							<tr>
 								<td>${product.id}</td>
-								<td>${product.category}</td>
+								<td><i class="fas fa-chevron-right"></i> ${product.categoryMain} <i class="fas fa-chevron-right"></i> ${product.categorySub}</td>
 								<td><a href="/ProductDetail?id=${product.id}">${product.name}</a></td>
-								<td>${product.price}</td>
-								<td>${product.image}</td>
+								<td><small><i class="fas fa-won-sign"></i></small> <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${product.price}" /></td>
 							</tr>
 							</c:forEach>
 						</tbody>
 						<tfoot>
 							<tr>
 								<td colspan="2"></td>
-								<td><input type="button" class="primary" value="상품 등록"/></td>
+								<td><input type="button" class="primary" value="상품 등록" onClick="self.location.href='/AddProduct'"/></td>
 							</tr>
 						</tfoot>
 					</table>

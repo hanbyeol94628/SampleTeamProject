@@ -3,19 +3,21 @@ package cf.inseoul.sample.web;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import cf.inseoul.sample.domain.posts.Files;
 import cf.inseoul.sample.domain.posts.Product;
+import cf.inseoul.sample.dto.FilesSaveDto;
 import cf.inseoul.sample.dto.ProductSaveRequestDto;
+import cf.inseoul.sample.dto.ProductUpdateRequestDto;
+import cf.inseoul.sample.service.FilesService;
 import cf.inseoul.sample.service.PostsService;
 import cf.inseoul.sample.service.ProductService;
 import lombok.AllArgsConstructor;
@@ -30,12 +32,11 @@ public class SampleController {
 	위에서 나온 @GetMapping은 이전으로 보면 @RequestMapping(value="/", method = RequestMethod.GET)과 동일합니다.
 	*/
 
-	private PostsService postsService;
 	private ProductService productService;
+	private FilesService filesService;
 
 	@GetMapping({"/", "/index"})
-	public String index(Model model) {
-		model.addAttribute("posts", postsService.findAllDesc());
+	public String index() {
 		return "index";
 	}
 
@@ -61,15 +62,23 @@ public class SampleController {
 	}
 	// 상품 등록 처리
 	@PostMapping("/productSave")
-	public String productSave(ProductSaveRequestDto dto) {
-		productService.save(dto);
+	public String productSave(ProductSaveRequestDto dto, FilesSaveDto filedto, @RequestParam MultipartFile file, HttpServletRequest request) throws Exception {
+		System.err.println("▶▶▶▶▶▶▶▶▶상품 등록됨");
+		
+		filedto.setFileUrl(ImgUploadUtil.uploadImg(file, request));
+		filedto.setFileName(ImgUploadUtil.getFileName(file, request));
+		filedto.setProductId(productService.save(dto));
+
+		filesService.filesSave(filedto);
+		System.err.println("▶▶▶▶▶▶▶▶▶파일 등록됨");
+		
 		return "redirect:/ProductList";
 	}
 	
 	
 	// 상품 목록 페이지 
 	@GetMapping("/ProductList")
-	public String productList(Model model) {
+	public String productList(Model model) throws Exception {
 		
 		List<Product> products = productService.list();
 		model.addAttribute("products", products);
@@ -80,13 +89,47 @@ public class SampleController {
 	
 	// 상품 조회
 	@GetMapping("/ProductDetail")
-	public void productDetail(Model model, @RequestParam Long id) {
+	public void productDetail(Model model, @RequestParam Long id) throws Exception {
 		Optional<Product> productO = productService.detail(id);
-		Product product = productO.get();
-		model.addAttribute("product", product);
+		Files filesO = filesService.filesView(id);
+		model.addAttribute("file",  filesO);
+		model.addAttribute("product", productO.get());
 	}
 	
 	
-	
+	// 상품 수정
+	@GetMapping("/productModify")
+	public String productModify(Model model, @RequestParam Long id) throws Exception{
+		Optional<Product> productO = productService.detail(id);
+		Files filesO = filesService.filesView(id);
+		model.addAttribute("product", productO.get());
+		model.addAttribute("file",  filesO);
+		return "ModifyProduct";
+	}
+	// 상품 수정 처리
+	@PostMapping("/productUpdate")
+	public String productUpdate(ProductUpdateRequestDto dto, FilesSaveDto filedto, @RequestParam MultipartFile file, HttpServletRequest request) throws Exception {
+		
+		dto.setId(dto.getId());
+		dto.setCategoryMain(dto.getCategoryMain());
+		dto.setCategorySub(dto.getCategorySub());
+		dto.setName(dto.getName());
+		dto.setContent(dto.getContent());
+		dto.setPrice(dto.getPrice());
+
+		productService.update(dto);
+		System.err.println("▶▶▶▶▶▶▶▶▶상품 수정됨");
+		
+		
+		filesService.filesDelete(filedto.getProductId());
+		System.err.println("▶▶▶▶▶▶▶▶▶파일 삭제됨");
+		
+		filedto.setFileUrl(ImgUploadUtil.uploadImg(file, request));
+		filedto.setFileName(ImgUploadUtil.getFileName(file, request));
+		filedto.setProductId(dto.getId());
+		
+		
+		return "redirect:/ProductList";
+	}
 	
 }

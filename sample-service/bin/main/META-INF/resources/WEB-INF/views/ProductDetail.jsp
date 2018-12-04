@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE HTML>
 <!--
 Editorial by HTML5 UP
@@ -31,7 +32,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 			<!-- Header -->
 			<header id="header">
-				<a href="index" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+				<a href="index" class="logo"><strong>Online Shop</strong> by Team try/catch</a>
 				<ul class="icons">
 					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -44,17 +45,33 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 			<!-- Section -->
 			<section>
-			<div class="box">
-					<i class="fas fa-chevron-right"></i> ${product.category }
-					<h3> ${product.name}</h3>
-					
-					<img src="${product.image}" />
-					
-					<i class="fas fa-won-sign"></i> ${product.price}
-					<div class="box">
-						${product.content}
-					</div>
+			<div class="box boxnoborder col-6">
+				<h4><i class="fas fa-chevron-right"></i> ${product.categoryMain} <small><i class="fas fa-chevron-right"></i></small> ${product.categorySub}</h4>
 			</div>
+			<div class="box boxnoborder textright col-6">
+				<a href="/productModify?id=${product.id}">수정</a>
+				<a href="/productDelete?id=${product.id}">삭제</a>
+			</div>
+			<div class="box col-12 infobox">
+				
+				<div class="imgSection">
+				</div>
+				
+				<div class="infoSection">
+				<h3> ${product.name}</h3>
+				<h1> <small><i class="fas fa-won-sign"></i></small> <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${product.price}" /> </h1>
+				
+				<button class="large"><i class="fas fa-cart-plus"></i> 장바구니</button>
+				<button class="large primary"><i class="fas fa-credit-card"></i> 구매하기</button>
+				</div>
+				
+				
+			</div>
+			<div class="content box col-12">
+					${product.content}
+			</div>
+			
+			
 			</section>
 			<!-- Section -->
 
@@ -139,8 +156,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
-<!--custom js 추가
-<script src="sample/sampleHb.js"></script>-->
+<!--custom js 추가-->
+<script src="sample/sampleHb.js"></script>
 
 <!-- CK Editor 추가 -->
 <script src="ckeditor/ckeditor.js"></script>
@@ -148,6 +165,14 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     CKEDITOR.replace( 'editor1' );
+</script>
+
+<script>
+var url ="/upload/images/"+'<c:out value="${file.fileUrl}"/>';
+
+$('.imgSection').css('background-image', 'url("' + url + '")');
+$('.imgSection').css('background-size', 'cover');
+
 </script>
 </body>
 </html>

@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import cf.inseoul.sample.domain.BaseTimeEntity;
+import cf.inseoul.sample.dto.ProductUpdateRequestDto;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,22 +21,30 @@ public class Product extends BaseTimeEntity{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String category;
+	private String categoryMain;
+	private String categorySub;
 	private String name;
-	private String image;
 	private Long price;
 	
 	@Column(columnDefinition = "TEXT")
 	private String content;
 	
 	@Builder
-	public Product(Long id, String category, String name, String image, Long price, String content) {
+	public Product(Long id, String categoryMain, String categorySub, String name, Long price, String content) {
 		this.id = id;
-		this.category = category;
+		this.categoryMain = categoryMain;
+		this.categorySub = categorySub;
 		this.name = name;
-		this.image = image;
 		this.price = price;
 		this.content = content;
+	}
+	
+	public void update(ProductUpdateRequestDto dto) {
+		this.categoryMain = dto.getCategoryMain();
+		this.categorySub = dto.getCategorySub();
+		this.name = dto.getName();
+		this.price = dto.getPrice();
+		this.content = dto.getContent();
 	}
 	
 }

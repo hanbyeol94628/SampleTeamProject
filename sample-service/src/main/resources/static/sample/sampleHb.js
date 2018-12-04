@@ -11,21 +11,21 @@
 		subCate.attr('name', '');
 
 		switch(selectedCate){
-			case "1" :
+			case "상의" :
 				$('.sub_cate1').addClass('display');
-				$('.sub_cate1').attr('name', 'category');
+				$('.sub_cate1').attr('name', 'categorySub');
 				break;
-			case "2" :
+			case "하의" :
 				$('.sub_cate2').addClass('display');
-				$('.sub_cate2').attr('name', 'category');
+				$('.sub_cate2').attr('name', 'categorySub');
 				break;
-			case "3" :
+			case "아우터" :
 				$('.sub_cate3').addClass('display');
-				$('.sub_cate3').attr('name', 'category');
+				$('.sub_cate3').attr('name', 'categorySub');
 				break; 
-			case "4" :
+			case "신발" :
 				$('.sub_cate4').addClass('display');
-				$('.sub_cate4').attr('name', 'category');
+				$('.sub_cate4').attr('name', 'categorySub');
 				break; 
 		}
 
@@ -72,5 +72,4 @@ upload.onchange = function (e) {
 
   return false;
 };
-
 

@@ -11,26 +11,26 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ProductSaveRequestDto {
 
-	private String category;
+	private String categoryMain;
+	private String categorySub;
 	private String name;
-	private String image;
 	private long price;
 	private String content;
 	
 	@Builder
-	public ProductSaveRequestDto(String category, String name, String image, long price, String content) {
-		this.category = category;
+	public ProductSaveRequestDto(String categoryMain, String categorySub, String name, String image, long price, String content) {
+		this.categoryMain = categoryMain;
+		this.categorySub = categorySub;
 		this.name = name;
-		this.image = image;
 		this.price = price;
 		this.content = content;
 	}
 
 	public Product toEntity() {
 		return Product.builder()
-				.category(category)
+				.categoryMain(categoryMain)
+				.categorySub(categorySub)
 				.name(name)
-				.image(image)
 				.price(price)
 				.content(content)
 				.build();

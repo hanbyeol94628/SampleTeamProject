@@ -33,7 +33,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 			<!-- Header -->
 			<header id="header">
-				<a href="index" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+				<a href="index" class="logo"><strong>Online Shop</strong> by Team try/catch</a>
 				<ul class="icons">
 					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -42,10 +42,21 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 				</ul>
 			</header>
-
+			
+			
+		<section>
+			
+			본 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 만들어졌습니다.<br />
+			홈페이지의 일부 내용과 이미지 등은 그 출처가 따로 있음을 밝힙니다.<br /><br /><br />
+			<span><strong>Online Shop</strong> by Team try/catch</span>
+			
+		</section>
+		
 		</div>
 	</div>
-
+	
+		
+		
 	<!-- Sidebar -->
 	<div id="sidebar">
 		<div class="inner">
@@ -54,6 +65,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<section id="search" class="alt">
 				<form method="post" action="#">
 					<input type="text" name="query" id="query" placeholder="Search"/>
+					
 				</form>
 			</section>
 
@@ -110,39 +122,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		</div>
 	</div>
 
-</div>
-
-<div class="modal fade" id="savePostsModal" tabindex="-1" role="dialog" aria-labelledby="savePostsLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="savePostsLabel">게시글 등록</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form>
-					<div class="form-group">
-						<label for="title">제목</label>
-						<input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
-					</div>
-					<div class="form-group">
-						<label for="author"> 작성자 </label>
-						<input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">
-					</div>
-					<div class="form-group">
-						<label for="content"> 내용 </label>
-						<textarea class="form-control" id="content" placeholder="내용을 입력하세요"></textarea>
-					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-				<button type="button" class="btn btn-primary" id="btn-save">등록</button>
-			</div>
-		</div>
-	</div>
 </div>
 
 <!-- Scripts -->

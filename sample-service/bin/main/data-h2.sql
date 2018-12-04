@@ -1,3 +1,2 @@
 insert into posts (title, author, content, created_date, modified_date) values ('테스트1', 'test1@gmail.com', '테스트1의 본문', now(), now());
 insert into posts (title, author, content, created_date, modified_date) values ('테스트2', 'test2@gmail.com', '테스트2의 본문', now(), now());
-insert into product (created_date, modified_date, category, name, image, price, content) values (now(), now(), '스니커즈/운동화', '너무 귀여운 노란색 신발', 'yellow-shoes.jpg', 599000, '<div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;"><strong>가격은</strong></div><div style="background:#eeeeee;border:1px solid #cccccc;padding:5px 10px;">안&nbsp;</div><div>귀엽다</div>');

@@ -11,18 +11,18 @@ public class ProductListDto {
 
 
 	private Long id;
-	private String category;
+	private String categoryMain;
+	private String categorySub;
 	private String name;
-	private String image;
 	private String price;
 	private String content;
 	
 	@Builder
 	public ProductListDto(Product entity) {
 		id = entity.getId();
-		category = entity.getCategory();
+		categoryMain = entity.getCategoryMain();
+		categorySub = entity.getCategorySub();
 		name = entity.getName();
-		image = entity.getImage();
 		price = priceFormat(entity.getPrice());
 		content = entity.getContent();
 	}

@@ -1,4 +1,4 @@
-rootProject.name = 'store'
+rootProject.name = 'SampleTeamProject'
 
 include 'sample-service'
 include 'kang-service'

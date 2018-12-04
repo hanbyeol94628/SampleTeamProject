@@ -45,3 +45,9 @@ spring:
   h2:
     console:
       enabled: true
+
+      
+      
+multipart:
+  maxFileSize: 1MB
+  maxRequestSize: 1MB

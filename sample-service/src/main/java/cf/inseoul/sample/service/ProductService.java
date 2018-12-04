@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import cf.inseoul.sample.domain.posts.Product;
 import cf.inseoul.sample.domain.posts.ProductRepository;
-import cf.inseoul.sample.dto.ProductListDto;
 import cf.inseoul.sample.dto.ProductSaveRequestDto;
+import cf.inseoul.sample.dto.ProductUpdateRequestDto;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -21,6 +21,12 @@ public class ProductService {
 		return productRepository.save(dto.toEntity()).getId();
 	}
 	
+	public Long update(ProductUpdateRequestDto dto) {
+		Product origin = productRepository.findById(dto.getId()).get();
+		origin.update(dto);
+		return productRepository.save(origin).getId();
+	}
+	
 	public List<Product> list() {
 		return productRepository.findAll();
 	}
@@ -28,4 +34,7 @@ public class ProductService {
 	public Optional<Product> detail(Long id) {
 		return productRepository.findById(id);
 	}
+	
+	
+	
 }
