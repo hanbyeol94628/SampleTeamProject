@@ -25,7 +25,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 <!-- Wrapper -->
 <div id="wrapper">
-
+<i class=""></i>
 	<!-- Main -->
 	<div id="main">
 		<div class="inner">
@@ -33,20 +33,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Header -->
 			<header id="header">
 				<a href="index" class="logo"><strong>Online Shop</strong> by Team try/catch</a>
-				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
-				</ul>
 			</header>
 
 
 			<!-- Section -->
 			<section>
 			<div class="box boxnoborder col-6">
-				<h4><i class="fas fa-chevron-right"></i> ${product.categoryMain} <small><i class="fas fa-chevron-right"></i></small> ${product.categorySub}</h4>
+				<h4><i class="fas fa-tags"></i> ${product.categoryMain} <small><i class="fas fa-chevron-right"></i></small> ${product.categorySub}</h4>
 			</div>
 			<div class="box boxnoborder textright col-6">
 				<a href="/productModify?id=${product.id}">수정</a>
@@ -164,7 +157,86 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script>
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace( 'editor1' );
+
+var editorConfig = {
+        filebrowserUploadUrl : "/ckEditor/imgUpload", //이미지 업로드
+};
+
+CKEDITOR.on('dialogDefinition', function( ev ){
+    var dialogName = ev.data.name;
+    var dialogDefinition = ev.data.definition;
+
+    switch (dialogName) {
+        case 'image': //Image Properties dialog
+        //dialogDefinition.removeContents('info');
+        dialogDefinition.removeContents('Link');
+        dialogDefinition.removeContents('advanced');
+        break;
+    }
+});
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+// Don't forget to add CSS for your custom styles.
+		CKEDITOR.addCss( 'figure[class*=easyimage-gradient]::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; right: 0; }' +
+			'figure[class*=easyimage-gradient] figcaption { position: relative; z-index: 2; }' +
+			'.easyimage-gradient-1::before { background-image: linear-gradient( 135deg, rgba( 115, 110, 254, 0 ) 0%, rgba( 66, 174, 234, .72 ) 100% ); }' +
+			'.easyimage-gradient-2::before { background-image: linear-gradient( 135deg, rgba( 115, 110, 254, 0 ) 0%, rgba( 228, 66, 234, .72 ) 100% ); }' );
+
+		CKEDITOR.replace( 'content', {
+			extraPlugins: 'easyimage',
+			removePlugins: 'image',
+			removeDialogTabs: 'link:advanced',
+			toolbar: [
+				{ name: 'document', items: [ 'Undo', 'Redo' ] },
+				{ name: 'styles', items: [ 'Format' ] },
+				{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'Strike', '-', 'RemoveFormat' ] },
+				{ name: 'paragraph', items: [ 'NumberedList', 'BulletedList' ] },
+				{ name: 'links', items: [ 'Link', 'Unlink' ] },
+				{ name: 'insert', items: [ 'EasyImageUpload' ] }
+			],
+			height: 630,
+			cloudServices_uploadUrl: 'https://33333.cke-cs.com/easyimage/upload/',
+			// Note: this is a token endpoint to be used for CKEditor 4 samples only. Images uploaded using this token may be deleted automatically at any moment.
+			// To create your own token URL please visit https://ckeditor.com/ckeditor-cloud-services/.
+			cloudServices_tokenUrl: 'https://33333.cke-cs.com/token/dev/ijrDsqFix838Gh3wGO3F77FSW94BwcLXprJ4APSp3XQ26xsUHTi0jcb1hoBt',
+			easyimage_styles: {
+				gradient1: {
+					group: 'easyimage-gradients',
+					attributes: {
+						'class': 'easyimage-gradient-1'
+					},
+					label: 'Blue Gradient',
+					icon: 'https://sdk.ckeditor.com/https://sdk.ckeditor.com/samples/assets/easyimage/icons/gradient1.png',
+					iconHiDpi: 'https://sdk.ckeditor.com/https://sdk.ckeditor.com/samples/assets/easyimage/icons/hidpi/gradient1.png'
+				},
+				gradient2: {
+					group: 'easyimage-gradients',
+					attributes: {
+						'class': 'easyimage-gradient-2'
+					},
+					label: 'Pink Gradient',
+					icon: 'https://sdk.ckeditor.com/https://sdk.ckeditor.com/samples/assets/easyimage/icons/gradient2.png',
+					iconHiDpi: 'https://sdk.ckeditor.com/https://sdk.ckeditor.com/samples/assets/easyimage/icons/hidpi/gradient2.png'
+				},
+				noGradient: {
+					group: 'easyimage-gradients',
+					attributes: {
+						'class': 'easyimage-no-gradient'
+					},
+					label: 'No Gradient',
+					icon: 'https://sdk.ckeditor.com/https://sdk.ckeditor.com/samples/assets/easyimage/icons/nogradient.png',
+					iconHiDpi: 'https://sdk.ckeditor.com/https://sdk.ckeditor.com/samples/assets/easyimage/icons/hidpi/nogradient.png'
+				}
+			},
+			easyimage_toolbar: [
+				'EasyImageFull',
+				'EasyImageSide',
+				'EasyImageGradient1',
+				'EasyImageGradient2',
+				'EasyImageNoGradient',
+				'EasyImageAlt'
+			]
+		} );
 </script>
 
 <script>

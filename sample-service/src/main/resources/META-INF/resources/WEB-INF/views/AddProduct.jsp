@@ -34,20 +34,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Header -->
 			<header id="header">
 				<a href="index" class="logo"><strong>Online Shop</strong> by Team try/catch</a>
-				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
-				</ul>
 			</header>
 
 
 			<!-- Section -->
 			<section>
 				<header class="major">
-					<h3> <i class="far fa-edit"></i> 상품 등록</h3>
+					<h3> <small><i class="far fa-edit"></i></small> 상품 등록</h3>
 				</header>
 				<div class="box">
 					<form method="post" action="/productSave" enctype="multipart/form-data">
@@ -238,6 +231,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <script src="ckeditor/ckeditor.js"></script>
 <script>
 
+subCate.addClass('none');
 
 var editorConfig = {
         filebrowserUploadUrl : "/ckEditor/imgUpload", //이미지 업로드

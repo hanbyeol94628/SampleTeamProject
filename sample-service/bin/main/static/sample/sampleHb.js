@@ -2,11 +2,11 @@
 	var mainCate = $('.main_cate');
 	var subCate = $('.sub_cate');
 
-	subCate.addClass('none');
 
 	$('.main_cate').change(function(){
 		var selectedCate = $(this).val();
 
+	    $(".sub_cate").addClass('none');
 		subCate.removeClass('display');
 		subCate.attr('name', '');
 

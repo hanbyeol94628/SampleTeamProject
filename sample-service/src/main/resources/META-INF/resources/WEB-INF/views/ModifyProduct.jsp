@@ -33,13 +33,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Header -->
 			<header id="header">
 				<a href="index" class="logo"><strong>Online Shop</strong> by Team try/catch</a>
-				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
-				</ul>
 			</header>
 
 
@@ -241,11 +234,25 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     CKEDITOR.replace( 'content' );
-    
+
     var selectedMainCategory = '<c:out value="${product.categoryMain}"/>';
-    var selectedSubCategory = '<c:out value="${product.categorySub}"/>';;
-    $(".categoryMain").val(selectedMainCategory).prop("selected", true);
-    $(".categorySub").val(selectedSubCategory).prop("selected", true);
+    var selectedSubCategory = '<c:out value="${product.categorySub}"/>';
+
+    $(".sub_cate").addClass('none');
+    
+    if(selectedMainCategory == "상의"){
+    	$(".sub_cate1").removeClass('none');
+    }else if(selectedMainCategory == "하의"){
+    	$(".sub_cate2").removeClass('none');
+    }else if(selectedMainCategory == "아우터"){
+    	$(".sub_cate3").removeClass('none');
+    }else if(selectedMainCategory == "신발"){
+    	$(".sub_cate4").removeClass('none');
+    }
+    
+    $(".main_cate").val(selectedMainCategory).prop("selected", true);
+    $(".sub_cate").val(selectedSubCategory).prop("selected", true);
+    $(".sub_cate").val(selectedSubCategory).attr('name', 'categorySub');
     
 </script>
 </body>

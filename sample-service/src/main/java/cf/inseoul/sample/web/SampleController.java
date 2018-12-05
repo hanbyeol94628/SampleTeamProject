@@ -55,6 +55,17 @@ public class SampleController {
 		return "test";
 	}
 	
+	@GetMapping("/OrderList")
+	public String order() {
+		return "orderList";
+	}
+	
+	@GetMapping("/Qna")
+	public String qna() {
+		return "qna";
+	}
+	
+	
 	// 상품 등록 페이지 
 	@GetMapping("/AddProduct")
 	public String hanbyeolTest() {
@@ -131,5 +142,14 @@ public class SampleController {
 		
 		return "redirect:/ProductList";
 	}
+	
+	
+	@GetMapping("/productDelete")
+	public String productDelete(@RequestParam Long id) throws Exception{
+		productService.delete(id);
+		return "redirect:/ProductList";
+	}
+	
+	
 	
 }

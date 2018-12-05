@@ -33,20 +33,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Header -->
 			<header id="header">
 				<a href="index" class="logo"><strong>Online Shop</strong> by Team try/catch</a>
-				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
-				</ul>
 			</header>
 
 
 			<!-- Section -->
 			<section>
 				<header class="major">
-					<h3> <i class="fas fa-list-ul"></i> 상품 목록</h3>
+					<h3> <small><i class="fas fa-list-ul"></i></small> 상품 목록</h3>
 				</header>
 				<div class="table-wrapper">
 					<table>
@@ -56,15 +49,17 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 								<th>카테고리</th>
 								<th>상품명</th>
 								<th>가격</th>
+								<th>내용</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${products}" var="product">
 							<tr>
 								<td>${product.id}</td>
-								<td><i class="fas fa-chevron-right"></i> ${product.categoryMain} <i class="fas fa-chevron-right"></i> ${product.categorySub}</td>
+								<td> ${product.categoryMain} <small><i class="fas fa-chevron-right"></i></small> ${product.categorySub}</td>
 								<td><a href="/ProductDetail?id=${product.id}">${product.name}</a></td>
 								<td><small><i class="fas fa-won-sign"></i></small> <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${product.price}" /></td>
+								<td class="contenttd"><small>${product.content}</small></td>
 							</tr>
 							</c:forEach>
 						</tbody>

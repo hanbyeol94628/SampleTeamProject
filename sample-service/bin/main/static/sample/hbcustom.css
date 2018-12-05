@@ -30,10 +30,14 @@ a {
 
 /* 이미지 리사이즈 */
 Section .content img {
-	max-width: 100%;
+	max-width: 800px;
 	height: auto;
 }
 
+
+.contenttd img {
+	display: none;
+}
 
 #menu,
 Section,
