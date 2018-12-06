@@ -34,6 +34,10 @@ Section .content img {
 	height: auto;
 }
 
+.inint{
+	padding: 0;
+	margin: 0;
+}
 
 .contenttd img {
 	display: none;
@@ -88,6 +92,10 @@ Section .previewImg {
 
 
 /* - - - - - - - - - - - - - -ProductDetail.jsp */
+Section .infobox{
+	padding : 30px 10px;
+}
+
 Section .imgSection,
 Section .infoSection {
 	float: left;
@@ -95,8 +103,8 @@ Section .infoSection {
 }
 
 .imgSection {
-	width: 400px;
-	height: 400px;
+	width: 450px;
+	height: 450px;
 	border: 1px solid #DDD;
 
 }
@@ -104,8 +112,22 @@ Section .infoSection {
 	padding: 10px 50px;	
 }
 
-Section .infoSection h1 /*가격*/{
-	margin : 50px 0 30px;
+Section .infoSection h2 /*가격*/{
+	font-weight: lighter;
+	margin : 70px 0 30px;
+}
+
+Section .infoSection h1 /*상품명*/{
+	font-weight: lighter;
+	letter-spacing: -1px;
+	padding-bottom : 10px; 
+}
+
+Section .infoSection span {
+	display: block;
+	width: 100px;
+	height: 5px;
+	background-color: #f56a6a;
 }
 
 Section .box {
@@ -113,3 +135,7 @@ Section .box {
 	overflow: hidden;
 }
 
+
+Section .content {
+	padding: 30px;
+}

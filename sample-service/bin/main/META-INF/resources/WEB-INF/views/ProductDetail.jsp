@@ -31,35 +31,46 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<div class="inner">
 
 			<!-- Header -->
-			<header id="header">
+			<header id="header" class="nomargin">
 				<a href="index" class="logo"><strong>Online Shop</strong> by Team try/catch</a>
 			</header>
 
 
 			<!-- Section -->
-			<section>
-			<div class="box boxnoborder col-6">
+			<section class="init">
+			
+			
+			<div class="boxnoborder col-6">
 				<h4><i class="fas fa-tags"></i> ${product.categoryMain} <small><i class="fas fa-chevron-right"></i></small> ${product.categorySub}</h4>
 			</div>
 			<div class="box boxnoborder textright col-6">
 				<a href="/productModify?id=${product.id}">수정</a>
 				<a href="/productDelete?id=${product.id}">삭제</a>
 			</div>
-			<div class="box col-12 infobox">
+			
+			
+			<div class="col-12 infobox boxnoborder init">
 				
-				<div class="imgSection">
+				<div class="imgSection col-6">
 				</div>
 				
-				<div class="infoSection">
-				<h3> ${product.name}</h3>
-				<h1> <small><i class="fas fa-won-sign"></i></small> <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${product.price}" /> </h1>
+				<div class="infoSection col-6">
+				<h1> ${product.name}</h1>
+				<span class="line"></span>
+				<h2> <small><i class="fas fa-won-sign"></i></small> <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${product.price}" /> </h2>
 				
-				<button class="large"><i class="fas fa-cart-plus"></i> 장바구니</button>
-				<button class="large primary"><i class="fas fa-credit-card"></i> 구매하기</button>
+				<button class="large"><i class="fas fa-cart-plus"></i> ADD</button>
+				<button class="large primary"><i class="fas fa-credit-card"></i> BUY</button>
 				</div>
 				
 				
 			</div>
+			
+			<div class="col-12 box box boxnoborder">
+				<h5><i class="fas fa-gift"></i> 상품 상세 정보</h5>
+			</div>
+			
+			
 			<div class="content box col-12">
 					${product.content}
 			</div>

@@ -49,7 +49,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 								<th>카테고리</th>
 								<th>상품명</th>
 								<th>가격</th>
-								<th>내용</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -59,16 +58,35 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 								<td> ${product.categoryMain} <small><i class="fas fa-chevron-right"></i></small> ${product.categorySub}</td>
 								<td><a href="/ProductDetail?id=${product.id}">${product.name}</a></td>
 								<td><small><i class="fas fa-won-sign"></i></small> <fmt:formatNumber type = "number" maxFractionDigits = "3" value = "${product.price}" /></td>
-								<td class="contenttd"><small>${product.content}</small></td>
 							</tr>
 							</c:forEach>
 						</tbody>
 						<tfoot>
 							<tr>
-								<td colspan="2"></td>
-								<td><input type="button" class="primary" value="상품 등록" onClick="self.location.href='/AddProduct'"/></td>
+								<td colspan="4">
+								<ul class="pagination">
+									<li><c:if test="${totalPages > 10} && ${page > 10}">
+										<input type="button" value="prev">
+									</c:if></li>
+									
+									<c:forEach var="i" begin="1" end="${totalPage}" step="1"> 
+									<li>
+										<a href="/ProductList?page=${i}" class="page">${ i } </a>
+										<input type="hidden" name="page" value="${i}">
+									</li>
+									
+									<li><c:if test="${totalPages > 10} && ${page > 10}">
+										<input type="button" value="prev">
+									</c:if></li>
+																		
+									</c:forEach>
+								</ul>
+								<input type="button" class="primary" value="상품 등록" onClick="self.location.href='/AddProduct'"/>
+								<input type="button" class="" value="더미데이터 들어가랏" onClick="self.location.href='/insertData'"/>
+								</td>
 							</tr>
 						</tfoot>
+						
 					</table>
 				</div>
 			</section>

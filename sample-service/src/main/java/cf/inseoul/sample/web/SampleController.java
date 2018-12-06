@@ -5,9 +5,15 @@ import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,7 +24,6 @@ import cf.inseoul.sample.dto.FilesSaveDto;
 import cf.inseoul.sample.dto.ProductSaveRequestDto;
 import cf.inseoul.sample.dto.ProductUpdateRequestDto;
 import cf.inseoul.sample.service.FilesService;
-import cf.inseoul.sample.service.PostsService;
 import cf.inseoul.sample.service.ProductService;
 import lombok.AllArgsConstructor;
 
@@ -40,19 +45,10 @@ public class SampleController {
 		return "index";
 	}
 
-	@GetMapping("/generic")
-	public String generic() {
-		return "generic";
-	}
 
 	@GetMapping("/elements")
 	public String elements() {
 		return "elements";
-	}
-
-	@GetMapping("/test")
-	public String test() {
-		return "test";
 	}
 	
 	@GetMapping("/OrderList")
@@ -66,6 +62,25 @@ public class SampleController {
 	}
 	
 	
+	
+	@GetMapping("/insertData")
+	public String insertData() {
+		
+		for(int i = 0; i<50; i++) {
+			ProductSaveRequestDto tempdto = new ProductSaveRequestDto();
+			tempdto.setCategoryMain("상의");
+			tempdto.setCategorySub("블라우스/셔츠");
+			tempdto.setName(i+"번째 블라우스라네요");
+			tempdto.setPrice(135000);
+			tempdto.setContent("<b>"+i+"번째 블라우스"+"</b>");
+			
+			productService.save(tempdto);
+		}
+		
+		return "redirect:/ProductList?page=1";
+	}
+	
+	
 	// 상품 등록 페이지 
 	@GetMapping("/AddProduct")
 	public String hanbyeolTest() {
@@ -73,7 +88,7 @@ public class SampleController {
 	}
 	// 상품 등록 처리
 	@PostMapping("/productSave")
-	public String productSave(ProductSaveRequestDto dto, FilesSaveDto filedto, @RequestParam MultipartFile file, HttpServletRequest request) throws Exception {
+	public String productSave(Model model, ProductSaveRequestDto dto, FilesSaveDto filedto, @RequestParam MultipartFile file, HttpServletRequest request) throws Exception {
 		System.err.println("▶▶▶▶▶▶▶▶▶상품 등록됨");
 		
 		filedto.setFileUrl(ImgUploadUtil.uploadImg(file, request));
@@ -82,20 +97,23 @@ public class SampleController {
 
 		filesService.filesSave(filedto);
 		System.err.println("▶▶▶▶▶▶▶▶▶파일 등록됨");
-		
+
 		return "redirect:/ProductList";
 	}
 	
-	
-	// 상품 목록 페이지 
-	@GetMapping("/ProductList")
-	public String productList(Model model) throws Exception {
+	@GetMapping("/ProductList{page}")
+	public String productList(Model model, @RequestParam(value="page", defaultValue = "1") int page) throws Exception {
 		
-		List<Product> products = productService.list();
+		Pageable pageable = PageRequest.of(page - 1, 10, Sort.by(Direction.DESC, "id"));
+		Page<Product> pageInfo = productService.listAll(pageable);
+		List<Product> products = pageInfo.getContent();
+
 		model.addAttribute("products", products);
+		model.addAttribute("totalPage", pageInfo.getTotalPages());
 		
 		return "ProductList";
 	}
+	
 	
 	
 	// 상품 조회
@@ -115,11 +133,12 @@ public class SampleController {
 		Files filesO = filesService.filesView(id);
 		model.addAttribute("product", productO.get());
 		model.addAttribute("file",  filesO);
+		
 		return "ModifyProduct";
 	}
 	// 상품 수정 처리
 	@PostMapping("/productUpdate")
-	public String productUpdate(ProductUpdateRequestDto dto, FilesSaveDto filedto, @RequestParam MultipartFile file, HttpServletRequest request) throws Exception {
+	public String productUpdate(Model model, ProductUpdateRequestDto dto, FilesSaveDto filedto, @RequestParam MultipartFile file, HttpServletRequest request) throws Exception {
 		
 		dto.setId(dto.getId());
 		dto.setCategoryMain(dto.getCategoryMain());
@@ -138,15 +157,17 @@ public class SampleController {
 		filedto.setFileUrl(ImgUploadUtil.uploadImg(file, request));
 		filedto.setFileName(ImgUploadUtil.getFileName(file, request));
 		filedto.setProductId(dto.getId());
-		
-		
+
+		filesService.filesSave(filedto);
+
 		return "redirect:/ProductList";
 	}
 	
 	
 	@GetMapping("/productDelete")
-	public String productDelete(@RequestParam Long id) throws Exception{
+	public String productDelete(Model model, @RequestParam Long id) throws Exception{
 		productService.delete(id);
+
 		return "redirect:/ProductList";
 	}
 	
