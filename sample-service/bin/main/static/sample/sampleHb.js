@@ -46,7 +46,9 @@
 		$('.filename').html(urlImg);
 	});    
 
-	
+
+	$('#price').keyup(function(){$(this).val( $(this).val().replace(/[^0-9]/g,"") );} );
+
 
 
 

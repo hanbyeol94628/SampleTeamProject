@@ -41,6 +41,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			
 			본 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 만들어졌습니다.<br />
 			홈페이지의 일부 내용과 이미지 등은 그 출처가 따로 있음을 밝힙니다.<br /><br /><br />
+			
+			<h5><a href="/user">구매자 페이지</a></h5><br />
 			<span><strong>Online Shop</strong> by Team try/catch</span>
 			
 		</section>

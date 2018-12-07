@@ -65,21 +65,24 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 							<tr>
 								<td colspan="4">
 								<ul class="pagination">
-									<li><c:if test="${totalPages > 10} && ${page > 10}">
-										<input type="button" value="prev">
-									</c:if></li>
-									
-									<c:forEach var="i" begin="1" end="${totalPage}" step="1"> 
+									<c:if test="${prev}">
 									<li>
-										<a href="/ProductList?page=${i}" class="page">${ i } </a>
-										<input type="hidden" name="page" value="${i}">
+										<input type="button" class="button small primary" value="prev" onClick="self.location.href='/ProductList?page=${startPage - 1}'">
 									</li>
+									</c:if>
 									
-									<li><c:if test="${totalPages > 10} && ${page > 10}">
-										<input type="button" value="prev">
-									</c:if></li>
-																		
+									<c:forEach begin="${startPage - 1}" end="${lastPage - 1}" var="i"> 
+									<li <c:out value="${page == i ? 'class=active' : '' }"/>>
+										<a href="/ProductList?page=${i}" class="page">${ i } </a>
+									</li>
 									</c:forEach>
+										
+									<c:if test="${next}">
+									<li>
+										<input type="button" class="button small primary" value="next" onClick="self.location.href='/ProductList?page=${lastPage + 1}'">
+									</li>
+									</c:if>
+													
 								</ul>
 								<input type="button" class="primary" value="상품 등록" onClick="self.location.href='/AddProduct'"/>
 								<input type="button" class="" value="더미데이터 들어가랏" onClick="self.location.href='/insertData'"/>

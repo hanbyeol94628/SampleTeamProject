@@ -13,7 +13,6 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,6 +24,7 @@ import cf.inseoul.sample.dto.ProductSaveRequestDto;
 import cf.inseoul.sample.dto.ProductUpdateRequestDto;
 import cf.inseoul.sample.service.FilesService;
 import cf.inseoul.sample.service.ProductService;
+import cf.inseoul.sample.util.PageHelper;
 import lombok.AllArgsConstructor;
 
 @Controller
@@ -104,12 +104,34 @@ public class SampleController {
 	@GetMapping("/ProductList{page}")
 	public String productList(Model model, @RequestParam(value="page", defaultValue = "1") int page) throws Exception {
 		
-		Pageable pageable = PageRequest.of(page - 1, 10, Sort.by(Direction.DESC, "id"));
+		PageHelper pageHelper = new PageHelper();
+		
+		int size = 10;
+		long totalProduts = productService.count();
+		Pageable pageable = PageRequest.of(page - 1, size, Sort.by(Direction.DESC, "id"));
 		Page<Product> pageInfo = productService.listAll(pageable);
 		List<Product> products = pageInfo.getContent();
 
 		model.addAttribute("products", products);
 		model.addAttribute("totalPage", pageInfo.getTotalPages());
+		model.addAttribute("pageSize", pageInfo.getSize());
+		model.addAttribute("page", page);
+
+		model.addAttribute("totalProducts", totalProduts);
+		
+		int lastPage = pageHelper.getNextPage(page, size);
+		int startPage = pageHelper.getStartPage(size, lastPage);
+		
+		model.addAttribute("startPage", startPage);
+		model.addAttribute("lastPage", lastPage);
+
+		boolean prev = startPage == 1;
+		boolean next = lastPage*size <= totalProduts;
+
+		model.addAttribute("prev", prev);
+		model.addAttribute("next", next);
+
+		
 		
 		return "ProductList";
 	}

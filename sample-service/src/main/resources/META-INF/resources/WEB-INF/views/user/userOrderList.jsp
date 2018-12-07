@@ -42,7 +42,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			본 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 만들어졌습니다.<br />
 			홈페이지의 일부 내용과 이미지 등은 그 출처가 따로 있음을 밝힙니다.<br /><br /><br />
 			
-			<h5><a href="/user">구매자 페이지</a></h5><br />
+			<h5><a href="/">판매자 페이지</a></h5><br />
 			<span><strong>Online Shop</strong> by Team try/catch</span>
 			
 		</section>
@@ -66,23 +66,17 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			<!-- Menu -->
 			<nav id="menu">
 				<header class="major">
-					<h2>관리자 페이지</h2>
+					<h2>마이 페이지</h2>
 				</header>
 				<ul>
 					<li>
-						<span class="opener">Product</span>
+						<span class="opener">주문 내역</span>
 						<ul>
-							<li><a href="/AddProduct">Regist Product</a></li>
-							<li><a href="/ProductList">Product List</a></li>
+							<li><a href="/cart">장바구니</a></li>
+							<li><a href="/userOrderList">주문 조회</a></li>
 						</ul>
 					</li>
-					<li>
-						<span class="opener">Sales Manager</span>
-						<ul>
-							<li><a href="/OrderList">Order</a></li>
-							<li><a href="/Qna">Q & A</a></li>
-						</ul>
-					</li>
+					
 					<li><a href="index">Homepage</a></li>
 					<li><a href="elements">Elements</a></li>
 					

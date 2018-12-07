@@ -115,14 +115,14 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 							<input type="text" name="price" id="price" value="" placeholder="가격" />
 						</div>
 						
-						
-						
-						
 						<div class="col-3">
 							<label for="price">원</label>
 						</div>
 						<div class="col-6">
 						</div>
+						
+						
+						
 						
 						<!-- Break -->
 						<div class="col-12">

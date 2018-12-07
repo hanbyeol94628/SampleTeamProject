@@ -19,6 +19,10 @@ public class ProductService {
 
 	private ProductRepository productRepository;
 	
+	public long count() {
+		return productRepository.count();
+	}
+	
 	public Long save(ProductSaveRequestDto dto) {
 		return productRepository.save(dto.toEntity()).getId();
 	}
