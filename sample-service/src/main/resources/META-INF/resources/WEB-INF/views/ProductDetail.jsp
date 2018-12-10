@@ -102,8 +102,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					<li>
 						<span class="opener">Product</span>
 						<ul>
-							<li><a href="/AddProduct">Regist Product</a></li>
-							<li><a href="/ProductList">Product List</a></li>
+							<li><a href="/AddProduct"><i class="far fa-edit"></i> Regist Product</a></li>
+							<li><a href="/ProductList"><i class="fas fa-list-ul"></i> Product List</a></li>
 						</ul>
 					</li>
 					<li>

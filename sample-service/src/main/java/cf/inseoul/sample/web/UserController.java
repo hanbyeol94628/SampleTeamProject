@@ -18,7 +18,7 @@ public class UserController {
 	*/
 
 
-	@GetMapping("")
+	@GetMapping({"", "/index"})
 	public String index() {
 		return "user/userMain";
 	}
@@ -27,13 +27,13 @@ public class UserController {
 	
 	@GetMapping("/cart")
 	public String gotocart() {
-		return "/cart";
+		return "/user/cart";
 	}
 	
 	
 	@GetMapping("/userOrderList")
 	public String hanbyeolTest() {
-		return "/userOrderList";
+		return "/user/userOrderList";
 	}
 	
 	

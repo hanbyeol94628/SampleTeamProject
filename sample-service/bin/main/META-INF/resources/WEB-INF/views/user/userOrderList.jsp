@@ -11,7 +11,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	<title>Editorial by HTML5 UP</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-	<link rel="stylesheet" href="assets/css/main.css"/>
+	<link rel="stylesheet" href="/assets/css/main.css"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -20,7 +20,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	<!-- noto Sans KR -->
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
 	<!-- custom css 추가 -->
-	<link rel="stylesheet" href="sample/hbcustom.css">
+	<link rel="stylesheet" href="/sample/hbcustom.css">
 </head>
 <body class="is-preload">
 
@@ -39,11 +39,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			
 		<section>
 			
-			본 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 만들어졌습니다.<br />
-			홈페이지의 일부 내용과 이미지 등은 그 출처가 따로 있음을 밝힙니다.<br /><br /><br />
-			
-			<h5><a href="/">판매자 페이지</a></h5><br />
-			<span><strong>Online Shop</strong> by Team try/catch</span>
+			이 곳에는 주문한 내역 리스트를 만들것이다...
 			
 		</section>
 		
@@ -69,17 +65,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 					<h2>마이 페이지</h2>
 				</header>
 				<ul>
-					<li>
-						<span class="opener">주문 내역</span>
-						<ul>
-							<li><a href="/cart">장바구니</a></li>
-							<li><a href="/userOrderList">주문 조회</a></li>
-						</ul>
-					</li>
-					
+					<li><a href="/user/cart"><i class="fas fa-cart-plus"></i> cart</a></li>
+					<li><a href="/user/userOrderList"><i class="fas fa-clipboard-list"></i> order list</a></li>
 					<li><a href="index">Homepage</a></li>
 					<li><a href="elements">Elements</a></li>
-					
 				</ul>
 			</nav>
 
@@ -113,18 +102,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 </div>
 
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/browser.min.js"></script>
+<script src="/assets/js/breakpoints.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
 <!--custom js 추가-->
-<script src="sample/sample.js"></script>
+<script src="/sample/sample.js"></script>
 
 </body>
 </html>
